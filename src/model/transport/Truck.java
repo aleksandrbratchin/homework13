@@ -1,6 +1,6 @@
 package model.transport;
 
-public class Truck extends WheeledTransport implements Engine, Tyre, Trailer{
+public class Truck extends WheeledTransportWithEngineAndTrailer {
     public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }

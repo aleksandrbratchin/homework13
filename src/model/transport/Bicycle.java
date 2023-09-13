@@ -1,6 +1,6 @@
 package model.transport;
 
-public class Bicycle extends WheeledTransport implements Tyre {
+public class Bicycle extends WheeledTransport {
     public Bicycle(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }

@@ -16,4 +16,6 @@ public abstract class WheeledTransport {
     public int getWheelsCount() {
         return wheelsCount;
     }
+
+    public abstract void updateTyre();
 }
