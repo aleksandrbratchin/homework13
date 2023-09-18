@@ -5,8 +5,4 @@ public class Bicycle extends WheeledTransport {
         super(modelName, wheelsCount);
     }
 
-    @Override
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
 }
