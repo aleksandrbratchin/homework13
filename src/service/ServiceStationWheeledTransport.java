@@ -4,52 +4,42 @@ import model.transport.*;
 
 public class ServiceStationWheeledTransport {
 
-    public void check(WheeledTransport transport) {
-        welcomeMessage(transport);
-        checkTyre(transport);
-    }
-
-    public void check(WheeledTransport[] transport) {
-        for (WheeledTransport wheeledTransport : transport) {
-            check(wheeledTransport);
-            System.out.println();
-        }
-    }
-    public void check(WheeledTransportWithEngine transport) {
-        welcomeMessage(transport);
-        transport.checkEngine();
-        checkTyre(transport);
-    }
-
-    public void check(WheeledTransportWithEngine[] transport) {
-        for (WheeledTransportWithEngine wheeledTransportWithEngine : transport) {
-            check(wheeledTransportWithEngine);
-            System.out.println();
-        }
-    }
-
-    public void check(WheeledTransportWithEngineAndTrailer transport) {
-        welcomeMessage(transport);
-        transport.checkEngine();
-        transport.checkTrailer();
-        checkTyre(transport);
-    }
-
-    public void check(WheeledTransportWithEngineAndTrailer[] transport) {
-        for (WheeledTransportWithEngineAndTrailer wheeledTransportWithEngineAndTrailer : transport) {
-            check(wheeledTransportWithEngineAndTrailer);
-            System.out.println();
-        }
-    }
-
-    private void welcomeMessage(WheeledTransport transport) {
-        System.out.println("Обслуживаем " + transport.getModelName());
+    protected void welcomeMessage(String name) {
+        System.out.println("Обслуживаем " + name);
         System.out.println();
     }
-    private void checkTyre(WheeledTransport transport) {
-        for (int i = 0; i < transport.getWheelsCount(); i++) {
-            transport.updateTyre();
+
+    protected void checkTyre(int wheel) {
+        for (int i = 0; i < wheel; i++) {
+            System.out.println("Меняем покрышку");
         }
     }
+
+    protected void checkEngine() {
+        System.out.println("Проверяем двигатель");
+    }
+
+    protected void checkTrailer() {
+        System.out.println("Проверяем прицеп");
+    }
+
+    public void check(Car car) {
+        welcomeMessage(car.getModelName());
+        checkTyre(car.getWheelsCount());
+        checkEngine();
+    }
+
+    public void check(Truck truck) {
+        welcomeMessage(truck.getModelName());
+        checkTyre(truck.getWheelsCount());
+        checkEngine();
+        checkTrailer();
+    }
+
+    public void check(Bicycle bicycle) {
+        welcomeMessage(bicycle.getModelName());
+        checkTyre(bicycle.getWheelsCount());
+    }
+
 
 }

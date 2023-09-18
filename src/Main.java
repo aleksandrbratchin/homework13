@@ -13,16 +13,23 @@ public class Main {
                 new Truck("truck1", 6),
                 new Truck("truck2", 8)
         };
-
         Bicycle[] bicycles = new Bicycle[]{
                 new Bicycle("bicycle1", 2),
                 new Bicycle("bicycle2", 2)
         };
 
-
         ServiceStationWheeledTransport station = new ServiceStationWheeledTransport();
-        station.check(cars);
-        station.check(bicycles);
-        station.check(trucks);
+        for (Bicycle bicycle : bicycles) {
+            station.check(bicycle);
+            System.out.println();
+        }
+        for (Car car : cars) {
+            station.check(car);
+            System.out.println();
+        }
+        for (Truck truck : trucks) {
+            station.check(truck);
+            System.out.println();
+        }
     }
 }

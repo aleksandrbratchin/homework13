@@ -1,10 +1,12 @@
 package model.transport;
 
-public abstract class WheeledTransport extends Transport {
+public abstract class WheeledTransport {
+
+    private final String modelName;
     private final int wheelsCount;
 
     public WheeledTransport(String modelName, int wheelsCount) {
-        super(modelName);
+        this.modelName = modelName;
         this.wheelsCount = wheelsCount;
     }
 
@@ -12,7 +14,7 @@ public abstract class WheeledTransport extends Transport {
         return wheelsCount;
     }
 
-    public void updateTyre(){
-        System.out.println("Меняем покрышку");
+    public String getModelName() {
+        return modelName;
     }
 }
