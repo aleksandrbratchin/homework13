@@ -1,12 +1,13 @@
 package service;
 
-import model.transport.*;
+import model.transport.WheeledTransport;
 
-public class ServiceStationWheeledTransport {
+public abstract class ServiceStationWheeledTransport {
 
-    protected void welcomeMessage(String name) {
-        System.out.println("Обслуживаем " + name);
+    public void check(WheeledTransport wheeledTransport) {
+        System.out.println("Обслуживаем " + wheeledTransport.getModelName());
         System.out.println();
+        checkTyre(wheeledTransport.getWheelsCount());
     }
 
     protected void checkTyre(int wheel) {
@@ -14,32 +15,5 @@ public class ServiceStationWheeledTransport {
             System.out.println("Меняем покрышку");
         }
     }
-
-    protected void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
-    protected void checkTrailer() {
-        System.out.println("Проверяем прицеп");
-    }
-
-    public void check(Car car) {
-        welcomeMessage(car.getModelName());
-        checkTyre(car.getWheelsCount());
-        checkEngine();
-    }
-
-    public void check(Truck truck) {
-        welcomeMessage(truck.getModelName());
-        checkTyre(truck.getWheelsCount());
-        checkEngine();
-        checkTrailer();
-    }
-
-    public void check(Bicycle bicycle) {
-        welcomeMessage(bicycle.getModelName());
-        checkTyre(bicycle.getWheelsCount());
-    }
-
 
 }

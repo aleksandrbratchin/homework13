@@ -1,6 +1,9 @@
 import model.transport.Bicycle;
 import model.transport.Car;
 import model.transport.Truck;
+import service.ServiceStationBicycle;
+import service.ServiceStationCar;
+import service.ServiceStationTrailer;
 import service.ServiceStationWheeledTransport;
 
 public class Main {
@@ -18,17 +21,19 @@ public class Main {
                 new Bicycle("bicycle2", 2)
         };
 
-        ServiceStationWheeledTransport station = new ServiceStationWheeledTransport();
+        ServiceStationWheeledTransport stationBicycle = new ServiceStationBicycle();
+        ServiceStationWheeledTransport stationCar = new ServiceStationCar();
+        ServiceStationWheeledTransport stationTrailer = new ServiceStationTrailer();
         for (Bicycle bicycle : bicycles) {
-            station.check(bicycle);
+            stationBicycle.check(bicycle);
             System.out.println();
         }
         for (Car car : cars) {
-            station.check(car);
+            stationCar.check(car);
             System.out.println();
         }
         for (Truck truck : trucks) {
-            station.check(truck);
+            stationTrailer.check(truck);
             System.out.println();
         }
     }
