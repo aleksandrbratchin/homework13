@@ -4,7 +4,7 @@ import model.transport.WheeledTransport;
 
 public class ServiceStationCar extends ServiceStationBicycle {
 
-    protected void checkEngine() {
+    private void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
 
