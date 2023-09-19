@@ -1,39 +1,20 @@
 import model.transport.Bicycle;
 import model.transport.Car;
 import model.transport.Truck;
-import service.ServiceStationBicycle;
-import service.ServiceStationCar;
-import service.ServiceStationTruck;
-import service.ServiceStationWheeledTransport;
+import model.transport.WheeledTransport;
 
 public class Main {
     public static void main(String[] args) {
-        Car[] cars = new Car[]{
+        WheeledTransport[] transports = new WheeledTransport[]{
                 new Car("car1", 4),
-                new Car("car2", 4)
-        };
-        Truck[] trucks = new Truck[]{
+                new Car("car2", 4),
                 new Truck("truck1", 6),
-                new Truck("truck2", 8)
-        };
-        Bicycle[] bicycles = new Bicycle[]{
+                new Truck("truck2", 8),
                 new Bicycle("bicycle1", 2),
                 new Bicycle("bicycle2", 2)
         };
-
-        ServiceStationWheeledTransport stationBicycle = new ServiceStationBicycle();
-        ServiceStationWheeledTransport stationCar = new ServiceStationCar();
-        ServiceStationWheeledTransport stationTrailer = new ServiceStationTruck();
-        for (Bicycle bicycle : bicycles) {
-            stationBicycle.check(bicycle);
-            System.out.println();
-        }
-        for (Car car : cars) {
-            stationCar.check(car);
-            System.out.println();
-        }
-        for (Truck truck : trucks) {
-            stationTrailer.check(truck);
+        for (WheeledTransport transport : transports) {
+            transport.check();
             System.out.println();
         }
     }
