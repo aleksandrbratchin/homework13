@@ -3,7 +3,7 @@ import model.transport.Car;
 import model.transport.Truck;
 import service.ServiceStationBicycle;
 import service.ServiceStationCar;
-import service.ServiceStationTrailer;
+import service.ServiceStationTruck;
 import service.ServiceStationWheeledTransport;
 
 public class Main {
@@ -23,7 +23,7 @@ public class Main {
 
         ServiceStationWheeledTransport stationBicycle = new ServiceStationBicycle();
         ServiceStationWheeledTransport stationCar = new ServiceStationCar();
-        ServiceStationWheeledTransport stationTrailer = new ServiceStationTrailer();
+        ServiceStationWheeledTransport stationTrailer = new ServiceStationTruck();
         for (Bicycle bicycle : bicycles) {
             stationBicycle.check(bicycle);
             System.out.println();

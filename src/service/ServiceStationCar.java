@@ -1,16 +1,21 @@
 package service;
 
+import model.transport.Car;
 import model.transport.WheeledTransport;
 
 public class ServiceStationCar extends ServiceStationBicycle {
+    @Override
+    public void check(WheeledTransport wheeledTransport) {
+        check((Car) wheeledTransport);
+    }
 
-    private void checkEngine() {
+    protected void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
 
-    @Override
-    public void check(WheeledTransport car) {
-        super.check(car);
+    public void check(Car car) {
+        welcomeMessage(car);
+        checkTyre(car.getWheelsCount());
         checkEngine();
     }
 
