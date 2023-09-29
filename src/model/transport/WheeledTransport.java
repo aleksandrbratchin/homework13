@@ -1,6 +1,6 @@
 package model.transport;
 
-public abstract class WheeledTransport {
+public abstract class WheeledTransport implements Checkable {
 
     private final String modelName;
     private final int wheelsCount;
